@@ -1,0 +1,3 @@
+/Users/Aadya/Documents/ML/All_Courses/Udacity/Projects/System_Monitor/CppND-System-Monitor/build/CMakeFiles/rebuild_cache.dir
+/Users/Aadya/Documents/ML/All_Courses/Udacity/Projects/System_Monitor/CppND-System-Monitor/build/CMakeFiles/edit_cache.dir
+/Users/Aadya/Documents/ML/All_Courses/Udacity/Projects/System_Monitor/CppND-System-Monitor/build/CMakeFiles/monitor.dir
