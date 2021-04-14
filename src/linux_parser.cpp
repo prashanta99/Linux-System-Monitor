@@ -315,7 +315,7 @@ long LinuxParser::ProcessProcStatData(int returnflag) {
 } 
 
 /*
-ReadPidStatsFile --> Helper Function to Read /proc/pid/stat file
+LinuxParser::ReadPidStatsFile --> Helper Function to Read /proc/pid/stat file
 returnflag = "PidActiveJiffies" : returns Total Active jiffies of the PID from proc/<pid>/stat file
 returnflag = "StartTime" : returns starttime of the PID from /proc/<pid>/stat file 
 */
@@ -344,7 +344,7 @@ long LinuxParser::ReadPidStatFile(int pid, string returnflag) {
 } 
 
 /*
-ReadPidStatusFile - Helper function to process /proc/pid/status file
+Helper function to process /proc/pid/status file
 returnstring = ""
 returnstring = ""
 */

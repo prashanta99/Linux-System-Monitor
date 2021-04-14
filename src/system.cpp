@@ -20,6 +20,7 @@ Processor& System::Cpu() { return cpu_; }
 //Return a container composed of the system's processes
 vector<Process>& System::Processes() { 
     vector<Process> allProcesses{};
+    this->processes_.clear() ;
     // read process IDs from file system and generate Vector
     for (int pid : LinuxParser::Pids()) {
         Process process{pid};
@@ -27,7 +28,7 @@ vector<Process>& System::Processes() {
         }
 
     std::sort(allProcesses.begin(), allProcesses.end(),[](Process& a, Process& b) {
-                                                    return (a.CpuUtilization() > b.CpuUtilization());
+                                                    return (b.CpuUtilization() < a.CpuUtilization());
                                                     });
     processes_ = allProcesses;
     return processes_; 
@@ -49,5 +50,4 @@ int System::RunningProcesses() { return LinuxParser::RunningProcesses(); }
 int System::TotalProcesses() { return LinuxParser::TotalProcesses(); }
 
 //Return the number of seconds since the system started running
-long int System::UpTime() { return LinuxParser::UpTime(); 
-}
+long int System::UpTime() { return LinuxParser::UpTime(); }

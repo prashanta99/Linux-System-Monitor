@@ -26,5 +26,6 @@ float Processor::Utilization() {
  
     this->previousActiveJiffies_ = currentActiveJiffies ;
     this->previousIdleJiffies_ = currentIdleJiffies ;
+    //cout << "Processor.cpp: system netActiveJiffies = " << currentActiveJiffies << " netIdleJiffies=" << currentIdleJiffies << "\n";
     return cpuUtilization;
 }

@@ -15,11 +15,11 @@ using std::cout ;
 
 Process::Process(int pid) {
    this->pid_ = pid ;
-   cpuUtilization_ = LinuxParser::CalculateCpuUtilization (this->pid_) ;
-   command_ = LinuxParser::Command(this->pid_) ;
-   ram_ = LinuxParser::Ram(this->pid_) ;
-   username_ = LinuxParser::User(this->pid_) ;
-   uptime_ = LinuxParser::UpTime(this->pid_) ;
+   this->cpuUtilization_ = LinuxParser::CalculateCpuUtilization (this->pid_) ;
+   this->command_ = LinuxParser::Command(this->pid_) ;
+   this->ram_ = LinuxParser::Ram(this->pid_) ;
+   this->username_ = LinuxParser::User(this->pid_) ;
+   this->uptime_ = LinuxParser::UpTime(this->pid_) ;
 }
 
 // Return this process's ID
@@ -43,8 +43,8 @@ long int Process::UpTime() { return this->uptime_ ; }
 // Overload the "less than" comparison operator for Process objects
 // To compare two processes with their cpuUtilizations
 bool Process::operator<(Process const& a) const { 
-    if (this->cpuUtilization_ > a.cpuUtilization_) {
-        return true ; 
+    if (this->cpuUtilization_ < a.cpuUtilization_) {
+        return false ; 
     }
-    return false ;    
-}
+    return true ;    
+    }
